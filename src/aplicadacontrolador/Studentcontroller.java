@@ -54,6 +54,20 @@ public class Studentcontroller implements ActionListener{
                         }
                     }
                     this.vista.BorrarStudents(flag);
+                }else{
+                    if(e.getActionCommand().equals("Actualizar")){
+                        boolean flag=false;
+                        String nombre=this.vista.getTfName().getText();
+                        int Roll=Integer.parseInt(this.vista.getTfRoll().getText());
+                        for (int i = 0; i < this.modelo.getBaseDatos().size(); i++) {
+                            if(this.modelo.getBaseDatos().get(i).getName().equalsIgnoreCase(nombre)){
+                                this.modelo.getBaseDatos().get(i).setRollno(Roll);
+                                flag=true;
+                                break;
+                            }
+                        }
+                        this.vista.ActualizarStudents(flag);
+                    }
                 }
             }
         }

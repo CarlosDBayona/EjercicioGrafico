@@ -35,6 +35,7 @@ public class Studentview extends JFrame{
     private JButton button;
     private JButton listar;
     private JButton borrar;
+    private JButton Actualizar;
     public Studentview(){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);           
         setSize(new Dimension(150, 200)); 
@@ -47,6 +48,7 @@ public class Studentview extends JFrame{
         this.button=new JButton("OK");
         this.listar=new JButton("Listar");
         this.borrar=new JButton("Borrar");
+        this.Actualizar=new JButton("Actualizar");
         setLayout(new FlowLayout());
         
         add(lName);
@@ -56,6 +58,7 @@ public class Studentview extends JFrame{
         add(button);
         add(listar);
         add(borrar);
+        add(Actualizar);
     
     }
 
@@ -100,6 +103,7 @@ public class Studentview extends JFrame{
         this.button.addActionListener(Controller);
         this.listar.addActionListener(Controller);
         this.borrar.addActionListener(Controller);
+        this.Actualizar.addActionListener(Controller);
     }
     
     public void listaStudents(int tamano){
@@ -127,6 +131,13 @@ public class Studentview extends JFrame{
             JOptionPane.showMessageDialog(null, "Se Ha eleiminado el estudiante correctamente");
         }else{
             JOptionPane.showMessageDialog(null, "No se ha podido eliminar");
+        }
+    }
+    public void ActualizarStudents(Boolean flag){
+        if (flag) {
+            JOptionPane.showMessageDialog(null, "Se Ha actualizado el estudiante correctamente");
+        }else{
+            JOptionPane.showMessageDialog(null, "No se ha podido actualizar");
         }
     }
 }
