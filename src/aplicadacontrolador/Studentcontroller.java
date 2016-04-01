@@ -39,10 +39,27 @@ public class Studentcontroller implements ActionListener{
                 this.vista.listarSrudents(this.modelo.getBaseDatos());
                 
             }
+            else{
+                if(e.getActionCommand().equals("Borrar")){
+                    boolean flag=false;
+                    String nombre=this.vista.getTfName().getText();
+                    int Roll=Integer.parseInt(this.vista.getTfRoll().getText());
+                    for (int i = 0; i < this.modelo.getBaseDatos().size(); i++) {
+                        if(this.modelo.getBaseDatos().get(i).getName().equalsIgnoreCase(nombre)){
+                            if(this.modelo.getBaseDatos().get(i).getRollno()==Roll){
+                                this.modelo.getBaseDatos().remove(i);
+                                flag=true;
+                                break;
+                            }
+                        }
+                    }
+                    this.vista.BorrarStudents(flag);
+                }
+            }
         }
     }
     public void startApplication(){
         this.vista.setVisible(true);
     }
- //borrar listar actualizar   
+ //actualizar   
 }

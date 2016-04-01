@@ -34,6 +34,7 @@ public class Studentview extends JFrame{
     private JTextField tfRoll;
     private JButton button;
     private JButton listar;
+    private JButton borrar;
     public Studentview(){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);           
         setSize(new Dimension(150, 200)); 
@@ -45,6 +46,7 @@ public class Studentview extends JFrame{
         this.tfRoll = new JTextField(5);
         this.button=new JButton("OK");
         this.listar=new JButton("Listar");
+        this.borrar=new JButton("Borrar");
         setLayout(new FlowLayout());
         
         add(lName);
@@ -53,6 +55,7 @@ public class Studentview extends JFrame{
         add(tfRoll);
         add(button);
         add(listar);
+        add(borrar);
     
     }
 
@@ -96,6 +99,7 @@ public class Studentview extends JFrame{
         this.Controller = Controller;
         this.button.addActionListener(Controller);
         this.listar.addActionListener(Controller);
+        this.borrar.addActionListener(Controller);
     }
     
     public void listaStudents(int tamano){
@@ -117,5 +121,12 @@ public class Studentview extends JFrame{
         panel.add(list);
         frame.add(panel);
         frame.setVisible(true);
+    }
+    public void BorrarStudents(Boolean flag){
+        if (flag) {
+            JOptionPane.showMessageDialog(null, "Se Ha eleiminado el estudiante correctamente");
+        }else{
+            JOptionPane.showMessageDialog(null, "No se ha podido eliminar");
+        }
     }
 }
