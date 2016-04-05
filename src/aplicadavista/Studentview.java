@@ -112,7 +112,7 @@ public class Studentview extends JFrame{
     public void listarSrudents(ArrayList<Student> lista){
         JFrame frame=new JFrame();
         JPanel panel=new JPanel();
-        frame.setSize(150, 150);
+        frame.setSize(300, 300);
         panel.setMinimumSize(new Dimension(500,500));
         panel.setBorder(BorderFactory.createTitledBorder("Nombre / Roll Nº"));
         String[] datos=new String[lista.size()];
